@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bt3.css">
+</head>
+<body>
+  <div class="counter-container">
+      <img class="background-image" src="https://lh3.googleusercontent.com/proxy/2cLNy2_wqZYTymPrMG5b57SW2crrPe_rFkUAopEQUFP_MQ6gdMGMmIIhxsZ-aK_VZXz7AWhA5LJrbOgDAitukfvaGtBChqOjFdOebnjVqkB2nR87WCULLo0w3iuQanCwlMw" >
+      <div class="progress-bar">
+        <span class="progress-text">0%</span>
+      </div>
+  </div>
+  <script>
+    const backgroundImage = document.querySelector('.background-image');
+const progressText = document.querySelector('.progress-text');
+
+function fadeInBackgroundImage() {
+  backgroundImage.style.opacity = 1;
+}
+
+function updateProgressText(value) {
+  progressText.textContent = `${value}%`;
+}
+
+function increaseProgress(duration) {
+  let progress = 0;
+  const interval = setInterval(() => {
+    if (progress < 100) {
+      progress++;
+      updateProgressText(progress);
+    } else {
+      clearInterval(interval);
+      backgroundImage.removeEventListener('load', fadeInBackgroundImage);
+      progressText.style.display = 'none';
+    }
+  }, duration);
+}
+backgroundImage.addEventListener('load', fadeInBackgroundImage);
+increaseProgress(Math.random() * 20 + 10); 
+
+function animateCounter(counter, targetNumber, duration) {
+  let currentNumber = parseInt(counter.textContent);
+  const step = (targetNumber - currentNumber) / (duration / 50); 
+
+  const counterInterval = setInterval(() => {
+    if (currentNumber < targetNumber) {
+      currentNumber += step;
+      counter.textContent = Math.round(currentNumber);
+    } else {
+      clearInterval(counterInterval);
+    }
+  }, 50);
+}
+  </script>
+</body>
+</html>

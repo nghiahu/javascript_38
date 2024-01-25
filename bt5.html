@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outermost{
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(138, 76, 195);
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            justify-content: center;
+            gap:60px;
+            margin-top: 200px;
+        }
+        ion-icon{
+            font-size: 40px;
+        }
+        .counter-label{
+            font-size: 50px;
+        }
+        .item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:10px;
+            padding-top:100px;
+            padding-bottom:100px ;
+        }
+    </style>
+</head>
+<body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <div class="outermost">
+    <div class="item">
+        <ion-icon name="logo-twitter"></ion-icon>
+        <div class="counter-label" data-target="12000">0</div>
+        <div>Twitter Followers</div>
+    </div>
+    <div class="item">
+        <ion-icon name="logo-youtube"></ion-icon>
+        <div class="counter-label"data-target="5000">0</div>
+        <div>YouTube Subscribers</div>
+    </div>
+    <div class="item">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <div class="counter-label" data-target="7500">0</div>
+        <div>Facebook Fans</div>
+    </div>
+</div>
+<script>
+   const counters = document.querySelectorAll('.counter-label');
+
+counters.forEach((counter) => {
+  const targetNumber = parseInt(counter.dataset.target);
+  const animationDuration = Math.floor(12000); 
+
+  animateCounter(counter, targetNumber, animationDuration);
+});
+
+function animateCounter(counter, targetNumber, duration) {
+  let currentNumber = parseInt(counter.textContent);
+  const step = (targetNumber - currentNumber) / (duration / 400); 
+
+  const counterInterval = setInterval(() => {
+    if (currentNumber < targetNumber) {
+      currentNumber += step;
+      counter.textContent = Math.round(currentNumber);
+    } else {
+      clearInterval(counterInterval);
+    }
+  }, 50);
+}
+</script>
+</body>
+</html>
