@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="settings">
+            <p>
+                <input type="checkbox" id="uppercase" checked>
+                <label for="uppercase">Include uppercase letters</label>
+            </p>
+            <p>
+                <input type="checkbox" id="lowercase" checked>
+                <label for="lowercase">Include lowercase letters</label>
+            </p>
+            <p>
+                <input type="checkbox" id="numbers" checked>
+                <label for="numbers">Include numbers</label>
+            </p>
+            <p>
+                <input type="checkbox" id="symbols" checked>
+                <label for="symbols">Include symbols</label>
+            </p>
+            <p>
+                <label for="password-length">Password Length:</label>
+                <input type="number" id="password-length" min="10" value="10">
+            </p>
+        </div>
+        <button id="generate-password">Generate Password</button>
+        <input type="text" id="generated-password" readonly>
+        <button id="copy-password" title="Copy to clipboard">Copy</button>
+    </div>
+    <script src="./bt7.js"></script>
+</body>
+</html>

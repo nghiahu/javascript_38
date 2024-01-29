@@ -1,0 +1,75 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+}
+.outmost{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(33, 126, 249);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.up b{
+    font-weight: 600;
+    font-size: 30px;
+}
+.sum_water {
+    border: 4px solid rgb(38, 38, 179);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 130px;
+    width: 130px;
+    height: 320px;
+    border-bottom-left-radius:20% ;
+    border-bottom-right-radius:20% ;
+    background-color: white;
+    color: rgb(79, 136, 205);
+}
+.sum_water_top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.glasses_water {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top:50px;
+}
+
+.glasses_up {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:10px;
+    
+}
+.glasses_up div{
+    border: 3px solid  rgb(38, 38, 179);
+    width: 40px;
+    height: 80px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-bottom-left-radius:20% ;
+    border-bottom-right-radius:20% ;
+    background-color: rgb(79, 136, 205);
+}
+
+
+
